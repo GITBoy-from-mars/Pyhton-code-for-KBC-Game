@@ -1,0 +1,62 @@
+# KBC
+
+questions= [
+ ["What is the capital of France?", "Berlin", "Madrid", "Paris", "Rome", 3],  #14
+  ["How many continents are there in the world?", 5, 6, 7, 8, 3],  #15
+  ["What is the chemical symbol for water?", "H2O", "O2", "CO2", "H2", 1],  #16
+  ["Who wrote 'Romeo and Juliet'?", "Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen", 2],  #17
+ ["What planet is known as the Red Planet?", "Earth", "Venus", "Mars", "Jupiter", 3],  #18
+  ["Who painted the Mona Lisa?", "Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet", 3],  #19
+ ["What is the smallest prime number?", 0, 1, 2, 3, 3],  #20
+ ["What is the currency of Japan?", "Yen", "Won", "Dollar", "Euro", 1],  #21
+  ["Which element is represented by the symbol 'Fe'?", "Gold", "Iron", "Silver", "Lead", 2],  #22
+ ["What is the hardest natural substance on Earth?", "Gold", "Iron", "Diamond", "Silver", 3],  #23
+  ["What is the speed of light?", "300,000 km/s", "150,000 km/s", "200,000 km/s", "250,000 km/s", 1],  #24
+  ["Who is known as the 'Father of Computers'?", "Charles Babbage", "Alan Turing", "Steve Jobs", "Bill Gates", 1],  #25
+  ["What is the largest ocean on Earth?", "Atlantic", "Indian", "Arctic", "Pacific", 4],  #26
+  ["Which organ is responsible for pumping blood throughout the body?", "Liver", "Heart", "Lungs", "Kidneys", 2],  #27
+  ["What is the freezing point of water?", "0°C", "32°C", "100°C", "212°C", 1],  #28
+  ["Which planet has the most moons?", "Mars", "Earth", "Jupiter", "Saturn", 4],  #29
+  ["Who discovered penicillin?", "Marie Curie", "Albert Einstein", "Alexander Fleming", "Isaac Newton", 3],  #30
+ ["Which vitamin is known as the 'sunshine vitamin'?", "Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E", 3],  #31
+ ["What is the main ingredient in guacamole?", "Tomato", "Lettuce", "Avocado", "Cucumber", 3],  #32
+ ["Which city is known as the Big Apple?", "Los Angeles", "New York", "Chicago", "San Francisco", 2],  #33
+  ["What is the largest planet in our solar system?", "Earth", "Saturn", "Jupiter", "Neptune", 3],  #34
+  ["Who invented the telephone?", "Alexander Graham Bell", "Nikola Tesla", "Thomas Edison", "Guglielmo Marconi", 1],  #35
+ ["What is the longest river in the world?", "Amazon", "Nile", "Mississippi", "Yangtze", 2],  #36
+  ["How many bones are there in the adult human body?", 204, 206, 208, 210, 2],  #37
+ ["Which is the smallest country in the world?", "Monaco", "Vatican City", "San Marino", "Liechtenstein", 2],  #38
+ ["What is the largest mammal in the world?", "Elephant", "Blue Whale", "Giraffe", "Shark", 2],  #39
+ ["What is the chemical formula for salt?", "H2O", "CO2", "NaCl", "O2", 3],  #40
+ ["What language has the most native speakers?", "English", "Spanish", "Chinese", "Hindi", 3],  #41
+ ["Who was the first person to walk on the moon?", "Buzz Aldrin", "Michael Collins", "Neil Armstrong", "Yuri Gagarin", 3],  #42
+ ["Which element has the atomic number 1?", "Oxygen", "Hydrogen", "Helium", "Nitrogen", 2],  #43
+  ["What is the largest desert in the world?", "Sahara", "Gobi", "Arctic", "Antarctica", 4],  #31
+ ]
+
+levels = [1000, 2000, 4000, 8000, 10000, 20000, 40000, 80000, 160000, 320000, 640000, 1280000, 2560000, 5120000, 10240000, 20240000, 30240000, 40240000,50240000, 60240000, 70240000, 80240000, 90240000, 100240000, 110240000, 120240000, 130240000, 140240000, 150240000, 160240000, 170240000]
+money = 0
+
+for i in range (0, len(questions)):
+  question = questions[i]
+  print(f"\n\n this Question is for {levels[i]}")
+  print(f" {question[0]}")
+  print(f"a. {question[1]}             b.{question[2]}")
+  print(f"c. {question[3]}             d.{question[4]}")
+  reply = int(input("Enter the Answer of this Question in (1-4): "))
+  if(reply == question[5]):
+    print(f"Correct Answer, You Have won Rs.{levels[i]}")
+    if(i== 4):
+      money = 10000
+    elif(i==9):
+      money = 320000
+    elif(i== 13):
+      money = 510000
+    elif (i>=1):
+      money = money + levels[i]
+  else:
+    print("wrong Answer!")
+    break
+
+print(f" Congratulation for the game your take home money is {money}")
+
